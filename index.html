@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="岐阜県郡上市高鷲町にある古民家宿まつぼっくり。雪山の帰り、週末スキー、郡上観光、のんびり過ごす旅に。">
+<title>古民家宿 まつぼっくり｜岐阜県郡上市高鷲町</title>
+
+<style>
+:root {
+  --cream: #f7eddd;
+  --paper: #fff9f0;
+  --brown: #65412b;
+  --dark: #392719;
+  --tan: #b59a87;
+  --line: #e4d4c2;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--dark);
+  background: var(--cream);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.9;
+}
+a { color: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  letter-spacing: .1em;
+}
+h3 { font-size: 1.05rem; }
+p { line-height: 2; }
+section { scroll-margin-top: 90px; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #f8edddf2;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5d7c6;
+}
+.nav {
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 22px;
+}
+.brand {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark { font-size: 1.7rem; color: var(--brown); }
+.links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: .85rem;
+}
+.links a { text-decoration: none; }
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white !important;
+  border-radius: 999px;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-align: center;
+  transition: .2s;
+}
+.btn:hover { background: #85583b; }
+
+.hero {
+  min-height: 550px;
+  position: relative;
+  background:
+    linear-gradient(90deg, #201912e8 0%, #2019129a 40%, #20191225 100%),
+    linear-gradient(125deg, #5a4b42, #2d3335);
+  display: flex;
+  align-items: center;
+}
+.hero.has-photo {
+  background-size: cover;
+  background-position: center;
+}
+.hero-inner {
+  max-width: 1140px;
+  width: 100%;
+  margin: auto;
+  padding: 90px 28px;
+  color: #fff9ed;
+}
+.hero .pine { font-size: 3rem; line-height: 1; }
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  letter-spacing: .13em;
+  line-height: 1.4;
+  margin: 16px 0 20px;
+}
+.hero p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  letter-spacing: .08em;
+}
+.hero small {
+  display: block;
+  opacity: .85;
+  letter-spacing: .12em;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 76px 24px;
+}
+.center { text-align: center; }
+.lead { max-width: 720px; margin: 20px auto 0; }
+.eyebrow {
+  color: #987052;
+  font-size: .8rem;
+  letter-spacing: .22em;
+  font-weight: 700;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 42px;
+}
+.feature { text-align: center; padding: 22px 18px; }
+.feature .symbol {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: #e9d4bd;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  font-size: 2rem;
+}
+.feature p { font-size: .92rem; }
+
+.section-alt { background: #f1e2d0; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+.photo-card {
+  background: var(--paper);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px #5a351014;
+}
+.photo-slot {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #c8ad93, #e7d6c3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #654a38;
+  font-size: .85rem;
+  padding: 15px;
+}
+.photo-slot.has-photo {
+  background-size: cover;
+  background-position: center;
+}
+.photo-slot.has-photo span { display: none; }
+.photo-card h3 {
+  margin: 10px 0 12px;
+  text-align: center;
+}
+
+.around-heading {
+  margin: 35px 0 16px;
+  color: var(--brown);
+  font-size: 1.15rem;
+  border-bottom: 1px solid #d9c4ad;
+  padding-bottom: 10px;
+}
+.around-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.around-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 17px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: .2s;
+}
+.around-card:hover {
+  background: #e9d5bf;
+  transform: translateY(-2px);
+}
+.around-card span { color: #a57b5b; }
+
+.rates {
+  max-width: 720px;
+  margin: 30px auto 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 26px;
+}
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.rate-row:last-child { border: 0; }
+.price { font-weight: 800; white-space: nowrap; }
+.note { font-size: .86rem; color: #745d4a; }
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+.placeholder {
+  border: 1px dashed #9b806c;
+  border-radius: 10px;
+  background: #ead8c5;
+  padding: 70px 20px;
+  text-align: center;
+  color: #765943;
+}
+.placeholder.has-photo {
+  background-size: cover;
+  background-position: center;
+  min-height: 280px;
+  border: 0;
+  color: transparent;
+}
+
+.faq { max-width: 820px; margin: 28px auto 0; }
+details {
+  border-bottom: 1px solid #d6c2ae;
+  padding: 16px 6px;
+}
+summary {
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 30px;
+}
+summary:after {
+  content: "＋";
+  position: absolute;
+  right: 0;
+  color: var(--brown);
+}
+details[open] summary:after { content: "－"; }
+details p { padding: 10px 0 0; margin: 0; }
+
+.cta {
+  text-align: center;
+  background: #e7d2bd;
+  padding: 68px 24px;
+}
+.cta .btn { margin: 14px 0; }
+.access { background: #f8f0e5; }
+footer {
+  background: #463020;
+  color: #f8eddd;
+  text-align: center;
+  padding: 30px 18px;
+  font-size: .85rem;
+}
+.small { font-size: .88rem; }
+
+@media (max-width: 850px) {
+  .links { gap: 12px; }
+  .links a:not(.btn) { display: none; }
+  .features { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .two { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .nav { padding: 10px 14px; }
+  .brand { font-size: .88rem; }
+  .brand-mark { font-size: 1.5rem; }
+  .links .btn { font-size: .72rem; padding: 9px 12px; }
+  .hero { min-height: 510px; }
+  .hero-inner { padding: 75px 22px; }
+  .wrap { padding: 58px 18px; }
+  .features { grid-template-columns: 1fr; gap: 0; }
+  .feature { padding: 13px 20px; }
+  .gallery { gap: 10px; }
+  .photo-card h3 { font-size: .85rem; }
+  .around-grid { grid-template-columns: 1fr; }
+  .around-card { padding: 14px 16px; }
+  .rates { padding: 18px; }
+  .rate-row { font-size: .88rem; }
+  .cta { padding: 56px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">♧</span>
+      <span>古民家宿<br>まつぼっくり</span>
+    </a>
+    <div class="links">
+      <a href="#concept">宿について</a>
+      <a href="#rooms">お部屋</a>
+      <a href="#around">周辺観光</a>
+      <a href="#price">料金</a>
+      <a href="#faq">よくあるご質問</a>
+      <a class="btn"
+         href="https://forms.gle/3DsoDfAZEBAsGH1w9"
+         target="_blank" rel="noopener">
+        空き状況を問い合わせる
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- メイン写真 -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="pine">♧</div>
+    <small>GIFU · GUJO · TAKASU</small>
+    <h1>古民家宿<br>まつぼっくり</h1>
+    <p>
+      高鷲の山あいに佇む、<br>
+      小さな古民家宿。
+    </p>
+  </div>
+</section>
+
+<!-- 宿について -->
+<section class="wrap center" id="concept">
+  <div class="eyebrow">WELCOME</div>
+  <h2>山あいの、小さな宿。</h2>
+  <p class="lead">
+    岐阜県郡上市高鷲町。<br>
+    築約80年の古民家を利用した、小さな素泊まり宿です。<br>
+    畳の部屋にこたつ、木のぬくもりが残る室内。<br>
+    気取らず、思い思いの時間をお過ごしください。
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <div class="symbol">❄</div>
+      <h3>雪山の帰りに</h3>
+      <p>
+        スキーやスノーボードを楽しんだあと、
+        ほっとひと息。
+      </p>
+    </div>
+    <div class="feature">
+      <div class="symbol">⌁</div>
+      <h3>郡上観光の拠点に</h3>
+      <p>
+        高鷲や郡上の自然と街を楽しむ旅の、
+        気軽な滞在先に。
+      </p>
+    </div>
+    <div class="feature">
+      <div class="symbol">☕</div>
+      <h3>ただ、ゆっくりと</h3>
+      <p>
+        畳とこたつのある空間で、
+        何もしない時間も楽しんで。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- お部屋 -->
+<section class="section-alt" id="rooms">
+  <div class="wrap">
+    <div class="eyebrow">ROOMS & SPACE</div>
+    <h2>お部屋と館内</h2>
+    <p>
+      昔ながらの家の空気を、そのままに。<br>
+      キッチンやお風呂、トイレは共用です。
+    </p>
+
+    <div class="gallery">
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="exterior">
+          <span>ここに外観写真のURL</span>
+        </div>
+        <h3>外観</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="tatami">
+          <span>ここに和室写真のURL</span>
+        </div>
+        <h3>和室・こたつ</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="beds">
+          <span>ここに寝室写真のURL</span>
+        </div>
+        <h3>木製2段ベッド</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="kitchen">
+          <span>ここにキッチン写真のURL</span>
+        </div>
+        <h3>キッチン</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="entrance">
+          <span>ここに玄関写真のURL</span>
+        </div>
+        <h3>玄関</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="bath">
+          <span>ここにお風呂写真のURL</span>
+        </div>
+        <h3>お風呂</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="living">
+          <span>ここに館内写真のURL</span>
+        </div>
+        <h3>館内の風景</h3>
+      </div>
+
+      <div class="photo-card">
+        <div class="photo-slot" data-photo="winter">
+          <span>ここに雪景色写真のURL</span>
+        </div>
+        <h3>冬の高鷲</h3>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:20px">
+      寝具はご用意しています。<br>
+      タオル・歯ブラシなどはご持参ください。<br>
+      シャンプー・ボディソープは備え付けです。
+    </p>
+  </div>
+</section>
+
+<!-- 周辺スポット -->
+<section class="wrap" id="around">
+  <div class="center">
+    <div class="eyebrow">EXPLORE GUJO</div>
+    <h2>周辺のスキー場・観光スポット</h2>
+    <p>
+      雪山を楽しむ週末も、郡上を巡る旅も。<br>
+      まつぼっくりを拠点に、思い思いの時間を。
+    </p>
+  </div>
+
+  <h3 class="around-heading">❄ スキー場</h3>
+  <div class="around-grid">
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=鷲ヶ岳スキー場" target="_blank" rel="noopener">鷲ヶ岳スキー場 <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=ダイナランド" target="_blank" rel="noopener">ダイナランド <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=高鷲スノーパーク" target="_blank" rel="noopener">高鷲スノーパーク <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=ホワイトピアたかす" target="_blank" rel="noopener">ホワイトピアたかす <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの高原スキー場" target="_blank" rel="noopener">ひるがの高原スキー場 <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=ウイングヒルズ白鳥リゾート" target="_blank" rel="noopener">ウイングヒルズ白鳥リゾート <span>↗</span></a>
+  </div>
+
+  <h3 class="around-heading">🌿 観光・温泉</h3>
+  <div class="around-grid">
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=牧歌の里" target="_blank" rel="noopener">牧歌の里 <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの分水嶺公園" target="_blank" rel="noopener">ひるがの分水嶺公園 <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=湯の平温泉+郡上市" target="_blank" rel="noopener">湯の平温泉 <span>↗</span></a>
+    <a class="around-card" href="https://www.google.com/maps/search/?api=1&amp;query=郡上八幡" target="_blank" rel="noopener">郡上八幡の町並み <span>↗</span></a>
+  </div>
+
+  <p class="note center" style="margin-top:25px">
+    ※営業期間や営業時間は季節・天候によって異なります。
+    お出かけ前に各施設の最新情報をご確認ください。
+  </p>
+</section>
+
+<!-- 宿泊料金 -->
+<section class="section-alt" id="price">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">STAY & PRICE</div>
+      <h2>宿泊料金</h2>
+      <p>気軽に泊まれる、シンプルな料金設定です。</p>
+    </div>
+
+    <div class="rates">
+      <div class="rate-row">
+        <span>大人（高校生以上）</span>
+        <span class="price">3,000円／泊</span>
+      </div>
+      <div class="rate-row">
+        <span>小・中学生</span>
+        <span class="price">2,000円／泊</span>
+      </div>
+      <div class="rate-row">
+        <span>未就学児（寝具あり）</span>
+        <span class="price">1,000円／泊</span>
+      </div>
+      <div class="rate-row">
+        <span>未就学児（添い寝）</span>
+        <span class="price">無料</span>
+      </div>
+    </div>
+
+    <p class="center note">
+      チェックイン 16:00〜20:00<br>
+      チェックアウト 10:00<br>
+      お支払いは現地で現金にてお願いいたします。
+    </p>
+  </div>
+</section>
+
+<!-- 食事サポート -->
+<section class="wrap two" id="meal">
+  <div>
+    <div class="eyebrow">A LITTLE HELP</div>
+    <h2>旅のごはんを、少しだけお手伝い。</h2>
+    <p>
+      基本は素泊まりですが、ご希望に応じて
+      簡単な食事サポートも行っています。<br>
+      雪山から帰ってきた夜や、出発前の朝に。
+    </p>
+    <p class="note">
+      朝食 500円／人<br>
+      和朝食または洋朝食（グループで統一）<br><br>
+      夕食サポート 300円／人<br>
+      炊きたてご飯と味噌汁をご用意します。<br>
+      おかずは各自でご用意ください。<br><br>
+      ※3名以上・事前予約制。対応できる日のみ承ります。
+    </p>
+  </div>
+  <div class="placeholder" data-photo="dining">
+    ここに食卓・こたつなどの写真URL
+  </div>
+</section>
+
+<!-- よくあるご質問 -->
+<section class="section-alt" id="faq">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">FAQ</div>
+      <h2>よくあるご質問</h2>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>ファミリー貸切はできますか？</summary>
+        <p>
+          お子様連れのご家族を対象に、
+          貸切での宿泊もご相談いただけます。<br>
+          1泊10,000円を最低料金とし、
+          人数別料金の合計が10,000円を超える場合は
+          その金額となります。<br>
+          日程や人数によって対応が異なりますので、
+          まずはお問い合わせください。
+        </p>
+      </details>
+
+      <details>
+        <summary>食事は付いていますか？</summary>
+        <p>
+          基本は素泊まりです。<br>
+          3名以上・事前予約で、朝食（500円／人）や
+          夕食サポート（300円／人）をご利用いただける場合があります。<br>
+          夕食はご飯と味噌汁をご用意し、
+          おかずは各自でご用意いただく形です。
+        </p>
+      </details>
+
+      <details>
+        <summary>お風呂は使えますか？</summary>
+        <p>
+          はい。ほかのお客様と利用が重ならないよう、
+          館内の入浴予約表にお名前と希望時間をご記入ください。
+        </p>
+      </details>
+
+      <details>
+        <summary>アメニティはありますか？</summary>
+        <p>
+          寝具、シャンプー、ボディソープはご用意しています。<br>
+          歯ブラシやタオルなどはご持参ください。<br>
+          フェイスタオルは1枚100円で販売しています。
+        </p>
+      </details>
+
+      <details>
+        <summary>キッチンは使えますか？</summary>
+        <p>
+          はい。共用キッチンをご利用いただけます。<br>
+          ほかのお客様も使いますので、
+          譲り合ってご利用ください。
+        </p>
+      </details>
+
+      <details>
+        <summary>予約はフォーム送信で確定しますか？</summary>
+        <p>
+          いいえ。まず空き状況をお問い合わせいただき、
+          宿からのご案内を経て予約確定となります。
+        </p>
+      </details>
+
+      <details>
+        <summary>キャンセル料はかかりますか？</summary>
+        <p>
+          予約確定後のキャンセルは、<br>
+          宿泊日の4日前まで無料、<br>
+          3〜2日前は宿泊料金の30％、<br>
+          前日は50％、<br>
+          当日および無連絡キャンセルは100％です。<br>
+          悪天候による道路通行止めなどの場合はご相談ください。
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="cta" id="contact">
+  <div class="eyebrow">CONTACT</div>
+  <h2>空き状況を問い合わせる</h2>
+  <p>
+    ご希望の日程と人数をお知らせください。<br>
+    空き状況を確認のうえ、原則48時間以内に
+    メールでご返信いたします。
+  </p>
+
+  <a class="btn"
+     href="https://forms.gle/3DsoDfAZEBAsGH1w9"
+     target="_blank"
+     rel="noopener">
+    ✉ 空き状況を問い合わせる →
+  </a>
+
+  <p class="note">
+    ※お問い合わせの時点では、
+    ご予約は確定しておりません。
+  </p>
+</section>
+
+<!-- アクセス -->
+<section class="access" id="access">
+  <div class="wrap center">
+    <div class="eyebrow">ACCESS</div>
+    <h2>アクセス</h2>
+    <p>岐阜県郡上市高鷲町鮎立47</p>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=岐阜県郡上市高鷲町鮎立47"
+       target="_blank" rel="noopener">
+      Googleマップで場所を見る ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>古民家宿 まつぼっくり</strong><br>
+  <span class="small">岐阜県郡上市高鷲町鮎立47</span><br>
+  <span class="small">© 古民家宿 まつぼっくり</span>
+</footer>
+
+<script>
+/*
+  写真URLを取得したら、下の文字をURLに変更してください。
+  URLが未設定の場合は仮の写真枠が表示されます。
+*/
+const PHOTO_URLS = {
+  hero: 'ここにメイン外観写真のURL',
+  exterior: 'ここに外観写真のURL',
+  tatami: 'ここに和室写真のURL',
+  beds: 'ここに寝室写真のURL',
+  kitchen: 'ここにキッチン写真のURL',
+  entrance: 'ここに玄関写真のURL',
+  bath: 'ここにお風呂写真のURL',
+  living: 'ここに館内写真のURL',
+  winter: 'ここに雪景色写真のURL',
+  dining: 'ここに食卓写真のURL'
+};
+
+function validPhoto(url) {
+  return typeof url === 'string' &&
+    /^(https?:\/\/|\.\/|\/)/.test(url.trim());
+}
+
+function setPhoto(element, url) {
+  if (!element || !validPhoto(url)) return;
+  element.style.backgroundImage =
+    'url("' + url.replace(/"/g, '%22') + '")';
+  element.classList.add('has-photo');
+}
+
+setPhoto(document.querySelector('.hero'), PHOTO_URLS.hero);
+
+document.querySelectorAll('[data-photo]').forEach(element => {
+  setPhoto(element, PHOTO_URLS[element.dataset.photo]);
+});
+</script>
+
+</body>
+</html>
