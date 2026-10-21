@@ -871,6 +871,26 @@ footer {
     right:30%;
   }
 }
+  
+/* フロアマップを横幅いっぱいに表示 */
+
+.floor-map {
+  max-width: none;
+  width: 100%;
+}
+
+/* スマホでは左右の余白もなくす */
+
+@media (max-width: 540px) {
+  .floor-box {
+    padding: 0;
+  }
+
+  .floor-map {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
