@@ -4,20 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- SEO：検索結果のタイトル -->
 <title>岐阜県郡上市高鷲の古民家宿｜スキー・素泊まり｜まつぼっくり</title>
 
-<!-- SEO：検索結果の説明 -->
 <meta name="description" content="岐阜県郡上市高鷲町の古民家宿まつぼっくり。鷲ヶ岳スキー場や高鷲スノーパークなどへの旅行に。大人1泊3,000円からの素泊まり宿。築約80年の古民家で、こたつを囲む山の休日を。">
 
-<!-- 正規URL -->
 <link rel="canonical" href="https://hachidoritable.github.io/matsubokkuri/">
 
-<!-- 検索エンジン向け -->
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#f7eddd">
 
-<!-- SNS共有時の表示 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="古民家宿まつぼっくり">
 <meta property="og:title" content="古民家宿まつぼっくり｜岐阜県郡上市高鷲">
@@ -27,16 +22,13 @@
 <meta property="og:image:alt" content="岐阜県郡上市高鷲町の古民家宿まつぼっくりの外観">
 <meta property="og:locale" content="ja_JP">
 
-<!-- Xなどでの共有表示 -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="古民家宿まつぼっくり｜岐阜県郡上市高鷲">
 <meta name="twitter:description" content="ちょっと不便で、ちょうどいい。高鷲の山あいにある小さな古民家宿。">
 <meta name="twitter:image" content="https://hachidoritable.github.io/matsubokkuri/outside.png">
 
-<!-- 画像の先読み：ファーストビュー -->
 <link rel="preload" as="image" href="outside.png">
 
-<!-- 宿泊施設の構造化データ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,8 +67,6 @@
   ]
 }
 </script>
-
-<!-- ここから既存のstyleタグをそのまま残す -->
 
 <style>
 :root {
@@ -317,30 +307,53 @@ header {
   margin-bottom:22px;
 }
 
-/* 間取り図 */
+/* 間取り図：白い枠なし・画面全幅 */
+
+.rooms-intro {
+  padding-bottom:0;
+}
 
 .floor-section {
   margin-top:40px;
 }
 
+.floor-heading {
+  padding:0 24px;
+}
+
 .floor-box {
-  background:var(--paper);
-  padding:24px;
-  border-radius:14px;
-  border:1px solid var(--line);
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
 }
 
 .floor-map {
   position:relative;
   width:100%;
-  max-width:900px;
-  margin:auto;
+  max-width:none;
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
 }
 
 .floor-map > img {
   display:block;
   width:100%;
+  max-width:none;
   height:auto;
+  margin:0;
+  padding:0;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
 }
 
 .map-hotspot {
@@ -376,10 +389,15 @@ header {
 .floor-legend {
   text-align:center;
   margin:12px 0 0;
+  padding:0 18px;
   font-size:.86rem;
 }
 
 /* 室内写真 横スクロール */
+
+.rooms-gallery-wrap {
+  padding-top:0;
+}
 
 .room-gallery {
   margin-top:36px;
@@ -804,8 +822,22 @@ footer {
     line-height:1.8;
   }
 
-  .floor-box {
-    padding:8px;
+  .wrap.rooms-intro {
+    padding-bottom:0;
+  }
+
+  .floor-heading {
+    padding:0 18px;
+  }
+
+  .map-note,
+  .floor-legend {
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  .wrap.rooms-gallery-wrap {
+    padding-top:0;
   }
 
   .room-gallery {
@@ -871,26 +903,6 @@ footer {
     right:30%;
   }
 }
-  
-/* フロアマップを横幅いっぱいに表示 */
-
-.floor-map {
-  max-width: none;
-  width: 100%;
-}
-
-/* スマホでは左右の余白もなくす */
-
-@media (max-width: 540px) {
-  .floor-box {
-    padding: 0;
-  }
-
-  .floor-map {
-    width: 100%;
-  }
-}
-
 </style>
 </head>
 
@@ -913,6 +925,7 @@ footer {
       <a href="#price">料金</a>
       <a href="#faq">よくあるご質問</a>
       <a href="#around">周辺情報</a>
+
       <a
         class="btn"
         href="https://forms.gle/3DsoDfAZEBAsGH1w9"
@@ -1014,8 +1027,9 @@ footer {
 <!-- 宿泊スペース -->
 
 <section class="section-alt" id="rooms">
-  <div class="wrap">
-    <div class="eyebrow">ROOMS & SPACE</div>
+
+  <div class="wrap rooms-intro">
+    <div class="eyebrow">ROOMS &amp; SPACE</div>
 
     <h2>宿泊スペースについて</h2>
 
@@ -1034,75 +1048,79 @@ footer {
       こたつのある和室やキッチン、浴室、トイレなどは共用です。
       譲り合いながら、気取らずお過ごしください。
     </p>
+  </div>
 
-    <!-- 間取り図 -->
+  <!-- フロアマップ：幅制限の外に配置 -->
 
-    <div class="floor-section">
-      <div class="center">
-        <div class="eyebrow">FLOOR PLAN</div>
-        <h2>宿泊スペースの間取り</h2>
-        <p class="map-note">
-          間取り図のカメラマークをタップすると、<br>
-          その場所の写真が見られます。
-        </p>
-      </div>
+  <div class="floor-section">
 
-      <div class="floor-box">
-        <div class="floor-map">
-          <img
-            src="floorplan-camera.png"
-            alt="宿泊スペースの間取り図"
-          >
+    <div class="center floor-heading">
+      <div class="eyebrow">FLOOR PLAN</div>
+      <h2>宿泊スペースの間取り</h2>
 
-          <button
-            class="map-hotspot"
-            style="left:40%;top:95%"
-            type="button"
-            data-gallery="entrance"
-            aria-label="玄関の写真を見る"
-          ></button>
-
-          <button
-            class="map-hotspot"
-            style="left:37%;top:33%"
-            type="button"
-            data-gallery="kitchen"
-            aria-label="キッチンの写真を見る"
-          ></button>
-
-          <button
-            class="map-hotspot"
-            style="left:46%;top:44%"
-            type="button"
-            data-gallery="living"
-            aria-label="和室10畳の写真を見る"
-          ></button>
-
-          <button
-            class="map-hotspot"
-            style="left:69%;top:64%"
-            type="button"
-            data-gallery="bed4"
-            aria-label="和室4畳の写真を見る"
-          ></button>
-
-          <button
-            class="map-hotspot"
-            style="left:88%;top:44%"
-            type="button"
-            data-gallery="bed8"
-            aria-label="和室8畳の写真を見る"
-          ></button>
-        </div>
-
-        <p class="floor-legend">
-          ※間取り図は配置をわかりやすく示したものです。
-        </p>
-      </div>
+      <p class="map-note">
+        間取り図のカメラマークをタップすると、<br>
+        その場所の写真が見られます。
+      </p>
     </div>
 
-    <!-- 室内写真ギャラリー -->
+    <div class="floor-box">
+      <div class="floor-map">
+        <img
+          src="floorplan-camera.png"
+          alt="宿泊スペースの間取り図"
+        >
 
+        <button
+          class="map-hotspot"
+          style="left:40%;top:95%"
+          type="button"
+          data-gallery="entrance"
+          aria-label="玄関の写真を見る"
+        ></button>
+
+        <button
+          class="map-hotspot"
+          style="left:37%;top:33%"
+          type="button"
+          data-gallery="kitchen"
+          aria-label="キッチンの写真を見る"
+        ></button>
+
+        <button
+          class="map-hotspot"
+          style="left:46%;top:44%"
+          type="button"
+          data-gallery="living"
+          aria-label="和室10畳の写真を見る"
+        ></button>
+
+        <button
+          class="map-hotspot"
+          style="left:69%;top:64%"
+          type="button"
+          data-gallery="bed4"
+          aria-label="和室4畳の写真を見る"
+        ></button>
+
+        <button
+          class="map-hotspot"
+          style="left:88%;top:44%"
+          type="button"
+          data-gallery="bed8"
+          aria-label="和室8畳の写真を見る"
+        ></button>
+      </div>
+
+      <p class="floor-legend">
+        ※間取り図は配置をわかりやすく示したものです。
+      </p>
+    </div>
+  </div>
+
+  <!-- 室内写真ギャラリー -->
+
+  <div class="wrap rooms-gallery-wrap">
     <div class="room-gallery">
       <div class="room-gallery-title">ROOM GALLERY</div>
 
@@ -1183,7 +1201,7 @@ footer {
 <section class="section-alt" id="price">
   <div class="wrap">
     <div class="center">
-      <div class="eyebrow">STAY & PRICE</div>
+      <div class="eyebrow">STAY &amp; PRICE</div>
       <h2>宿泊料金</h2>
       <p>1名1泊・素泊まり・税込の料金です。</p>
     </div>
@@ -1198,6 +1216,7 @@ footer {
               <th>土曜・祝前日</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>大人<br>（高校生以上）</td>
