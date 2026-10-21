@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="description" content="岐阜県郡上市高鷲町の古民家宿まつぼっくり。宿主や宿泊者と家をシェアする、ちょっと不便で心地いい小さな素泊まり宿。">
 
 <title>古民家宿 まつぼっくり｜郡上市高鷲町</title>
@@ -91,15 +89,15 @@ header {
 .brand {
   display:flex;
   align-items:center;
-  gap:12px;
+  flex-shrink:0;
   text-decoration:none;
-  font-weight:800;
   line-height:1.4;
 }
 
 .brand img {
-  width:62px;
-  height:62px;
+  display:block;
+  width:180px;
+  height:auto;
   object-fit:contain;
 }
 
@@ -154,24 +152,17 @@ header {
   color:#fff9ed;
 }
 
-.hero-title {
-  display:flex;
-  align-items:center;
-  gap:24px;
+.hero .hero-title {
+  margin:20px 0 28px;
+  line-height:1;
 }
 
 .hero-logo {
-  width:160px;
+  display:block;
+  width:420px;
+  max-width:100%;
   height:auto;
   object-fit:contain;
-  flex-shrink:0;
-}
-
-.hero h1 {
-  font-size:clamp(2.3rem,5vw,4.2rem);
-  letter-spacing:.12em;
-  line-height:1.4;
-  margin:16px 0;
 }
 
 .hero small {
@@ -648,19 +639,14 @@ footer {
 /* スマホ表示 */
 
 @media(max-width:540px) {
-
   .nav {
     padding:8px 12px;
-  }
-
-  .brand {
-    font-size:.82rem;
-    gap:7px;
+    gap:10px;
   }
 
   .brand img {
-    width:47px;
-    height:47px;
+    width:140px;
+    height:auto;
   }
 
   .links .btn {
@@ -678,16 +664,14 @@ footer {
     margin:0 auto;
   }
 
-  .hero-title {
-    gap:12px;
+  .hero .hero-title {
+    margin:20px 0 26px;
   }
 
   .hero-logo {
-    width:88px;
-  }
-
-  .hero-title h1 {
-    font-size:clamp(1.7rem,7vw,2.4rem);
+    width:300px;
+    max-width:100%;
+    height:auto;
   }
 
   .wrap {
@@ -816,7 +800,6 @@ footer {
     right:30%;
   }
 }
-
 </style>
 </head>
 
@@ -826,13 +809,11 @@ footer {
 
 <header>
   <nav class="nav">
-
     <a class="brand" href="#home">
       <img
-        src="matsubokkuri-logo-transparent.png"
-        alt="まつぼっくりのロゴ"
+        src="logoblack-.png"
+        alt="古民家宿 まつぼっくり"
       >
-      <span>古民家宿<br>まつぼっくり</span>
     </a>
 
     <div class="links">
@@ -841,7 +822,6 @@ footer {
       <a href="#price">料金</a>
       <a href="#faq">よくあるご質問</a>
       <a href="#around">周辺情報</a>
-
       <a
         class="btn"
         href="https://forms.gle/3DsoDfAZEBAsGH1w9"
@@ -851,7 +831,6 @@ footer {
         空き状況を問い合わせる
       </a>
     </div>
-
   </nav>
 </header>
 
@@ -860,42 +839,28 @@ footer {
 <!-- トップ -->
 
 <section class="hero" id="home">
-
   <div class="hero-inner">
-
     <small>GIFU · GUJO · TAKASU</small>
 
-    <div class="hero-title">
-
+    <h1 class="hero-title">
       <img
         class="hero-logo"
-        src="logo-white.png"
-        alt="まつぼっくりのロゴ"
+        src="logowhite-.png"
+        alt="古民家宿 まつぼっくり"
       >
-
-      <h1>
-        古民家宿<br>
-        まつぼっくり
-      </h1>
-
-    </div>
+    </h1>
 
     <p>
       ちょっと不便で、ちょうどいい。<br>
       高鷲の山あいにある、小さな古民家宿。
     </p>
-
   </div>
-
 </section>
 
 <!-- コンセプト -->
 
 <section class="wrap center" id="concept">
-
-  <div class="eyebrow">
-    ABOUT MATSUBOKKURI
-  </div>
+  <div class="eyebrow">ABOUT MATSUBOKKURI</div>
 
   <h2>ちょっと不便な、山の家。</h2>
 
@@ -909,29 +874,23 @@ footer {
   </p>
 
   <div class="concept-message">
-
     <h3>便利じゃないけど、心地いい。</h3>
-
     <p>
       山の空気、綺麗な星空、こたつを囲む時間。<br>
       特別な設備はないけれど、<br>
       ここでしか味わえない時間があります。
     </p>
-
   </div>
 
   <div class="concept-visual">
-
     <img
       src="viewpoint.jpeg"
       alt="高鷲の星空、古民家での団らん、緑に囲まれた清流"
       loading="lazy"
     >
-
   </div>
 
   <div class="concept-sharing">
-
     <h3>ひとつの家を、みんなでシェア。</h3>
 
     <p>
@@ -958,20 +917,14 @@ footer {
       毎日営業する宿ではなく、
       宿主が滞在できる日を中心にお迎えしています。
     </p>
-
   </div>
-
 </section>
 
 <!-- 宿泊スペース -->
 
 <section class="section-alt" id="rooms">
-
   <div class="wrap">
-
-    <div class="eyebrow">
-      ROOMS & SPACE
-    </div>
+    <div class="eyebrow">ROOMS & SPACE</div>
 
     <h2>宿泊スペースについて</h2>
 
@@ -994,26 +947,17 @@ footer {
     <!-- 間取り図 -->
 
     <div class="floor-section">
-
       <div class="center">
-
-        <div class="eyebrow">
-          FLOOR PLAN
-        </div>
-
+        <div class="eyebrow">FLOOR PLAN</div>
         <h2>宿泊スペースの間取り</h2>
-
         <p class="map-note">
           間取り図のカメラマークをタップすると、<br>
           その場所の写真が見られます。
         </p>
-
       </div>
 
       <div class="floor-box">
-
         <div class="floor-map">
-
           <img
             src="floorplan-camera.png"
             alt="宿泊スペースの間取り図"
@@ -1058,131 +1002,103 @@ footer {
             data-gallery="bed8"
             aria-label="和室8畳の写真を見る"
           ></button>
-
         </div>
 
         <p class="floor-legend">
           ※間取り図は配置をわかりやすく示したものです。
         </p>
-
       </div>
-
     </div>
 
+    <!-- 室内写真ギャラリー -->
 
-<!-- 室内写真ギャラリー -->
+    <div class="room-gallery">
+      <div class="room-gallery-title">ROOM GALLERY</div>
 
-<div class="room-gallery">
+      <p class="room-gallery-guide">
+        ← 横にスワイプして写真を見る →
+      </p>
 
-  <div class="room-gallery-title">
-    ROOM GALLERY
+      <div class="room-gallery-scroll">
+        <figure class="room-gallery-item">
+          <img
+            src="outside.png"
+            alt="古民家宿まつぼっくりの外観"
+            loading="lazy"
+          >
+          <figcaption>外観</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="washitsu-winter.png"
+            alt="冬の和室・こたつ"
+            loading="lazy"
+          >
+          <figcaption>冬の和室・こたつ</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="washitsu-dinner.png"
+            alt="こたつを囲む時間"
+            loading="lazy"
+          >
+          <figcaption>こたつを囲む時間（イメージ）</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="washitsu-4.jpeg"
+            alt="和室4畳・二段ベッド"
+            loading="lazy"
+          >
+          <figcaption>和室4畳・二段ベッド</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="washitsu-8.jpeg"
+            alt="和室8畳・二段ベッド"
+            loading="lazy"
+          >
+          <figcaption>和室8畳・二段ベッド</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="kitchen.jpeg"
+            alt="共用キッチン"
+            loading="lazy"
+          >
+          <figcaption>共用キッチン</figcaption>
+        </figure>
+
+        <figure class="room-gallery-item">
+          <img
+            src="dining.jpeg"
+            alt="ダイニングテーブル"
+            loading="lazy"
+          >
+          <figcaption>ダイニングテーブル</figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
-
-  <p class="room-gallery-guide">
-    ← 横にスワイプして写真を見る →
-  </p>
-
-  <div class="room-gallery-scroll">
-
-    <figure class="room-gallery-item">
-      <img src="outside.png"
-           alt="古民家宿まつぼっくりの外観"
-           loading="lazy">
-      <figcaption>外観</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="washitsu-winter.png"
-           alt="冬の和室・こたつ"
-           loading="lazy">
-      <figcaption>冬の和室・こたつ</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="washitsu-dinner.png"
-           alt="こたつを囲む時間"
-           loading="lazy">
-      <figcaption>こたつを囲む時間（イメージ）</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="washitsu-4.jpeg"
-           alt="和室4畳・二段ベッド"
-           loading="lazy">
-      <figcaption>和室4畳・二段ベッド</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="washitsu-8.jpeg"
-           alt="和室8畳・二段ベッド"
-           loading="lazy">
-      <figcaption>和室8畳・二段ベッド</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="kitchen.jpeg"
-           alt="共用キッチン"
-           loading="lazy">
-      <figcaption>共用キッチン</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="dining.jpeg"
-           alt="ダイニングテーブル"
-           loading="lazy">
-      <figcaption>ダイニングテーブル</figcaption>
-    </figure>
-
-    <figure class="room-gallery-item">
-      <img src="entrance.jpeg"
-           alt="玄関・土間"
-           loading="lazy">
-      <figcaption>玄関・土間</figcaption>
-    </figure>
-
-  </div>
-
-</div>
-
-
-    <!-- アメニティ -->
-
-    <p class="note" style="margin-top:25px">
-      寝具はご用意しています。<br>
-      タオル・歯ブラシなどはご持参ください。<br>
-      シャンプー・ボディソープは備え付けです。<br>
-      冬季は暖房器具を使用しますが、
-      古民家のため冷え込むことがあります。
-    </p>
-
-  </div>
-
 </section>
 
 <!-- 宿泊料金 -->
 
 <section class="section-alt" id="price">
-
   <div class="wrap">
-
     <div class="center">
-
-      <div class="eyebrow">
-        STAY & PRICE
-      </div>
-
+      <div class="eyebrow">STAY & PRICE</div>
       <h2>宿泊料金</h2>
-
-      <p>
-        1名1泊・素泊まり・税込の料金です。
-      </p>
-
+      <p>1名1泊・素泊まり・税込の料金です。</p>
     </div>
 
     <div class="rates">
-
       <div class="price-table-wrap">
-
         <table class="price-table">
           <thead>
             <tr>
@@ -1191,7 +1107,6 @@ footer {
               <th>土曜・祝前日</th>
             </tr>
           </thead>
-
           <tbody>
             <tr>
               <td>大人<br>（高校生以上）</td>
@@ -1215,9 +1130,7 @@ footer {
             </tr>
           </tbody>
         </table>
-
       </div>
-
     </div>
 
     <p class="center note" style="margin-top:22px">
@@ -1233,27 +1146,18 @@ footer {
       お支払いは現地で現金にてお願いいたします。<br>
       宿泊可能日は事前のお問い合わせにてご案内します。
     </p>
-
   </div>
-
 </section>
 
 <!-- よくあるご質問 -->
 
 <section class="wrap" id="faq">
-
   <div class="center">
-
-    <div class="eyebrow">
-      FAQ
-    </div>
-
+    <div class="eyebrow">FAQ</div>
     <h2>よくあるご質問</h2>
-
   </div>
 
   <div class="faq">
-
     <details>
       <summary>毎日営業していますか？</summary>
       <p>
@@ -1347,19 +1251,13 @@ footer {
         ご相談ください。
       </p>
     </details>
-
   </div>
-
 </section>
 
 <!-- お問い合わせ -->
 
 <section class="cta" id="contact">
-
-  <div class="eyebrow">
-    CONTACT
-  </div>
-
+  <div class="eyebrow">CONTACT</div>
   <h2>空き状況を問い合わせる</h2>
 
   <p>
@@ -1380,24 +1278,16 @@ footer {
   <p class="note">
     ※お問い合わせの時点では予約は確定しておりません。
   </p>
-
 </section>
 
 <!-- アクセス -->
 
 <section class="access" id="access">
-
   <div class="wrap center">
-
-    <div class="eyebrow">
-      ACCESS
-    </div>
-
+    <div class="eyebrow">ACCESS</div>
     <h2>アクセス</h2>
 
-    <p>
-      岐阜県郡上市高鷲町鮎立1047
-    </p>
+    <p>岐阜県郡上市高鷲町鮎立1047</p>
 
     <a
       href="https://www.google.com/maps/search/?api=1&amp;query=岐阜県郡上市高鷲町鮎立1047"
@@ -1408,9 +1298,7 @@ footer {
     </a>
 
     <div class="winter-notice">
-
       <h3>❄️ 冬季にお越しのお客様へ</h3>
-
       <p>
         冬季は積雪や路面凍結が発生します。<br>
         <strong>
@@ -1420,40 +1308,27 @@ footer {
         天候や道路状況によってはチェーンが必要になる場合もあります。
         時間に余裕を持って、安全運転でお越しください。
       </p>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- 周辺情報 -->
 
 <section class="wrap" id="around">
-
   <div class="center">
-
-    <div class="eyebrow">
-      NEARBY INFORMATION
-    </div>
-
+    <div class="eyebrow">NEARBY INFORMATION</div>
     <h2>まつぼっくりの周辺情報</h2>
-
     <p class="around-intro">
       温泉やお買い物、道の駅、四季折々の観光スポット。<br>
       高鷲・郡上での滞在をお楽しみください。
     </p>
-
   </div>
 
-  <!-- 1. 温泉 -->
+  <!-- 温泉 -->
 
-  <h3 class="around-heading">
-    ♨️ 温泉
-  </h3>
+  <h3 class="around-heading">♨️ 温泉</h3>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=湯の平温泉+郡上市"
        target="_blank" rel="noopener">
@@ -1503,21 +1378,14 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <!-- 2. コンビニ・スーパー -->
+  <!-- コンビニ・スーパー -->
 
-  <h3 class="around-heading">
-    🛒 コンビニ・スーパー
-  </h3>
-
-  <h4 class="around-subheading">
-    コンビニ
-  </h4>
+  <h3 class="around-heading">🛒 コンビニ・スーパー</h3>
+  <h4 class="around-subheading">コンビニ</h4>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=ファミリーマート+高鷲インター店"
        target="_blank" rel="noopener">
@@ -1547,30 +1415,16 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <h4 class="around-subheading">
-    スーパー
-  </h4>
+  <h4 class="around-subheading">スーパー</h4>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=バロー白鳥店"
        target="_blank" rel="noopener">
       <div>
         <span class="around-name">バロー白鳥店</span>
-        <span class="around-time">車で約15分（10.1km）</span>
-      </div>
-      <span class="around-arrow">↗</span>
-    </a>
-
-    <a class="around-card"
-       href="https://www.google.com/maps/search/?api=1&amp;query=Aコープ+おくみの店"
-       target="_blank" rel="noopener">
-      <div>
-        <span class="around-name">Aコープ おくみの店</span>
         <span class="around-time">車で約20分（11.7km）</span>
       </div>
       <span class="around-arrow">↗</span>
@@ -1585,17 +1439,13 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <!-- 3. 道の駅 -->
+  <!-- 道の駅 -->
 
-  <h3 class="around-heading">
-    🚗 道の駅
-  </h3>
+  <h3 class="around-heading">🚗 道の駅</h3>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=道の駅+清流の里しろとり"
        target="_blank" rel="noopener">
@@ -1635,21 +1485,14 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <!-- 4. 周辺スポット -->
+  <!-- 周辺スポット -->
 
-  <h3 class="around-heading">
-    🌿 周辺スポット
-  </h3>
-
-  <h4 class="around-subheading">
-    ❄️ スキー・スノーボード
-  </h4>
+  <h3 class="around-heading">🌿 周辺スポット</h3>
+  <h4 class="around-subheading">❄️ スキー・スノーボード</h4>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=鷲ヶ岳スキー場"
        target="_blank" rel="noopener">
@@ -1709,15 +1552,11 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <h4 class="around-subheading">
-    🌼 観光・お出かけ
-  </h4>
+  <h4 class="around-subheading">🌼 観光・お出かけ</h4>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=牧歌の里"
        target="_blank" rel="noopener">
@@ -1757,15 +1596,11 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
-  <h4 class="around-subheading">
-    🌲 登山・川遊び・アウトドア
-  </h4>
+  <h4 class="around-subheading">🌲 登山・川遊び・アウトドア</h4>
 
   <div class="around-grid">
-
     <a class="around-card"
        href="https://www.google.com/maps/search/?api=1&amp;query=大日ヶ岳+ひるがの登山口"
        target="_blank" rel="noopener">
@@ -1815,7 +1650,6 @@ footer {
       </div>
       <span class="around-arrow">↗</span>
     </a>
-
   </div>
 
   <p class="note center" style="margin-top:30px">
@@ -1825,7 +1659,6 @@ footer {
     ※施設の営業時間・営業期間・利用状況は季節により異なります。
     お出かけ前に各施設の最新情報をご確認ください。
   </p>
-
 </section>
 
 </main>
@@ -1847,7 +1680,6 @@ footer {
   aria-modal="true"
   aria-label="写真ビューア"
 >
-
   <button
     class="modal-close"
     type="button"
@@ -1861,16 +1693,9 @@ footer {
   >‹</button>
 
   <div class="modal-content">
-
     <img id="modalImage" src="" alt="">
-
     <p class="modal-title" id="modalTitle"></p>
-
-    <div
-      class="modal-counter"
-      id="modalCounter"
-    ></div>
-
+    <div class="modal-counter" id="modalCounter"></div>
   </div>
 
   <button
@@ -1878,29 +1703,24 @@ footer {
     type="button"
     aria-label="次の写真"
   >›</button>
-
 </div>
 
 <script>
-
 /* 写真一覧 */
 
 const galleries = {
-
   exterior: [
     {
       src:"outside.png",
       title:"冬の外観"
     }
   ],
-
   entrance: [
     {
       src:"entrance.jpeg",
       title:"玄関・土間"
     }
   ],
-
   living: [
     {
       src:"washitsu-winter.png",
@@ -1911,21 +1731,18 @@ const galleries = {
       title:"こたつを囲む時間（イメージ）"
     }
   ],
-
   bed4: [
     {
       src:"washitsu-4.jpeg",
       title:"和室4畳・二段ベッド"
     }
   ],
-
   bed8: [
     {
       src:"washitsu-8.jpeg",
       title:"和室8畳・二段ベッド"
     }
   ],
-
   kitchen: [
     {
       src:"kitchen.jpeg",
@@ -1936,38 +1753,23 @@ const galleries = {
       title:"ダイニング"
     }
   ]
-
 };
 
 /* 写真ビューア */
 
-const modal =
-  document.getElementById("photoModal");
-
-const modalImage =
-  document.getElementById("modalImage");
-
-const modalTitle =
-  document.getElementById("modalTitle");
-
-const modalCounter =
-  document.getElementById("modalCounter");
-
-const prevButton =
-  modal.querySelector(".modal-prev");
-
-const nextButton =
-  modal.querySelector(".modal-next");
-
-const closeButton =
-  modal.querySelector(".modal-close");
+const modal = document.getElementById("photoModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalCounter = document.getElementById("modalCounter");
+const prevButton = modal.querySelector(".modal-prev");
+const nextButton = modal.querySelector(".modal-next");
+const closeButton = modal.querySelector(".modal-close");
 
 let currentGallery = [];
 let currentIndex = 0;
 let previousFocus = null;
 
 function renderPhoto() {
-
   if (!currentGallery.length) return;
 
   const photo = currentGallery[currentIndex];
@@ -1977,27 +1779,16 @@ function renderPhoto() {
   modalTitle.textContent = photo.title;
 
   modalCounter.textContent =
-    (currentIndex + 1) +
-    " / " +
-    currentGallery.length;
+    (currentIndex + 1) + " / " + currentGallery.length;
 
-  const multiple =
-    currentGallery.length > 1;
+  const multiple = currentGallery.length > 1;
 
-  prevButton.style.display =
-    multiple ? "" : "none";
-
-  nextButton.style.display =
-    multiple ? "" : "none";
-
+  prevButton.style.display = multiple ? "" : "none";
+  nextButton.style.display = multiple ? "" : "none";
 }
 
 function openGallery(name) {
-
-  if (
-    !galleries[name] ||
-    !galleries[name].length
-  ) return;
+  if (!galleries[name] || !galleries[name].length) return;
 
   currentGallery = galleries[name];
   currentIndex = 0;
@@ -2009,11 +1800,9 @@ function openGallery(name) {
   document.body.classList.add("modal-open");
 
   closeButton.focus();
-
 }
 
 function closeGallery() {
-
   modal.classList.remove("show");
   document.body.classList.remove("modal-open");
 
@@ -2025,11 +1814,9 @@ function closeGallery() {
   ) {
     previousFocus.focus();
   }
-
 }
 
 function changePhoto(direction) {
-
   if (currentGallery.length < 2) return;
 
   currentIndex =
@@ -2040,23 +1827,15 @@ function changePhoto(direction) {
     ) % currentGallery.length;
 
   renderPhoto();
-
 }
 
-document
-  .querySelectorAll("[data-gallery]")
-  .forEach(button => {
-
-    button.addEventListener("click", () => {
-      openGallery(button.dataset.gallery);
-    });
-
+document.querySelectorAll("[data-gallery]").forEach(button => {
+  button.addEventListener("click", () => {
+    openGallery(button.dataset.gallery);
   });
+});
 
-closeButton.addEventListener(
-  "click",
-  closeGallery
-);
+closeButton.addEventListener("click", closeGallery);
 
 prevButton.addEventListener("click", () => {
   changePhoto(-1);
@@ -2067,15 +1846,12 @@ nextButton.addEventListener("click", () => {
 });
 
 modal.addEventListener("click", event => {
-
   if (event.target === modal) {
     closeGallery();
   }
-
 });
 
 document.addEventListener("keydown", event => {
-
   if (!modal.classList.contains("show")) return;
 
   if (event.key === "Escape") {
@@ -2092,41 +1868,30 @@ document.addEventListener("keydown", event => {
   }
 
   if (event.key === "Tab") {
-
     const controls = [
       closeButton,
       prevButton,
       nextButton
-    ].filter(
-      el => el.style.display !== "none"
-    );
+    ].filter(el => el.style.display !== "none");
 
     const first = controls[0];
-    const last =
-      controls[controls.length - 1];
+    const last = controls[controls.length - 1];
 
     if (
       event.shiftKey &&
       document.activeElement === first
     ) {
-
       event.preventDefault();
       last.focus();
-
     } else if (
       !event.shiftKey &&
       document.activeElement === last
     ) {
-
       event.preventDefault();
       first.focus();
-
     }
-
   }
-
 });
-
 </script>
 
 </body>
