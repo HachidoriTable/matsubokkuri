@@ -329,7 +329,7 @@ header {
 }
 
 /* =========================
-   周辺観光
+   周辺情報
 ========================= */
 
 .around-heading {
@@ -352,19 +352,48 @@ header {
   border-radius:10px;
   padding:16px 20px;
   text-decoration:none;
-  font-weight:700;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
+  gap:12px;
+  transition:background .2s;
 }
 
 .around-card:hover {
   background:#e9d5bf;
 }
 
-.around-card span {
+.around-name {
+  display:block;
+  font-weight:700;
+  font-size:.94rem;
+  line-height:1.5;
+}
+
+.around-time {
+  display:block;
+  font-size:.8rem;
+  color:#81644d;
+  font-weight:400;
+  margin-top:4px;
+  line-height:1.5;
+}
+
+.around-arrow {
   color:#a57b5b;
+  font-weight:700;
+  flex-shrink:0;
+}
+
+.around-subheading {
+  color:#856044;
+  font-size:.96rem;
+  margin:27px 0 12px;
+}
+
+.around-intro {
+  max-width:750px;
+  margin:15px auto 0;
 }
 
 /* =========================
@@ -471,6 +500,31 @@ details p {
 
 .access {
   background:#f8f0e5;
+}
+
+.winter-notice {
+  max-width:760px;
+  margin:34px auto 0;
+  padding:24px 28px;
+  border:2px solid #b88b68;
+  border-radius:12px;
+  background:#fffaf2;
+  text-align:left;
+}
+
+.winter-notice h3 {
+  color:var(--brown);
+  margin-bottom:12px;
+  font-size:1.08rem;
+}
+
+.winter-notice p {
+  margin:0;
+  font-size:.93rem;
+}
+
+.winter-notice strong {
+  color:#9a4c29;
 }
 
 footer {
@@ -587,7 +641,6 @@ footer {
     padding:9px 12px;
   }
 
-  /* トップの文字を左上へ */
   .hero {
     min-height:490px;
     align-items:flex-start;
@@ -614,7 +667,6 @@ footer {
     padding:55px 18px;
   }
 
-  /* 本文を読みやすく */
   .wrap p {
     font-size:14px;
     line-height:1.9;
@@ -653,13 +705,11 @@ footer {
     margin-bottom:20px;
   }
 
-  /* 宿泊スペースの説明 */
   #rooms > .wrap > p:not(.note) {
     font-size:14px;
     line-height:1.9;
   }
 
-  /* 長い見出し */
   #rooms h2,
   #around h2 {
     font-size:23px;
@@ -682,8 +732,14 @@ footer {
 
   .around-card {
     padding:14px 16px;
+  }
+
+  .around-name {
     font-size:14px;
-    line-height:1.5;
+  }
+
+  .around-time {
+    font-size:12px;
   }
 
   .rates {
@@ -697,6 +753,10 @@ footer {
   .price-table th,
   .price-table td {
     padding:11px 8px;
+  }
+
+  .winter-notice {
+    padding:18px;
   }
 
   .modal {
@@ -741,9 +801,9 @@ footer {
     <div class="links">
       <a href="#concept">宿について</a>
       <a href="#rooms">宿泊スペース</a>
-      <a href="#around">周辺観光</a>
       <a href="#price">料金</a>
       <a href="#faq">よくあるご質問</a>
+      <a href="#around">周辺情報</a>
 
       <a
         class="btn"
@@ -815,7 +875,6 @@ footer {
     そんな気持ちで始めました。
   </p>
 
-
   <div class="concept-message">
 
     <h3>便利じゃないけど、心地いい。</h3>
@@ -827,7 +886,6 @@ footer {
     </p>
 
   </div>
-  <!-- 星空・団らん・清流の画像 -->
 
   <div class="concept-visual">
 
@@ -902,8 +960,6 @@ footer {
       譲り合いながら、気取らずお過ごしください。
     </p>
 
-    <!-- 間取り図 -->
-
     <div class="floor-section">
 
       <div class="center">
@@ -930,7 +986,6 @@ footer {
             alt="宿泊スペースの間取り図"
           >
 
-          <!-- 玄関 -->
           <button
             class="map-hotspot"
             style="left:40%;top:95%"
@@ -939,7 +994,6 @@ footer {
             aria-label="玄関の写真を見る"
           ></button>
 
-          <!-- キッチン -->
           <button
             class="map-hotspot"
             style="left:37%;top:33%"
@@ -948,7 +1002,6 @@ footer {
             aria-label="キッチンの写真を見る"
           ></button>
 
-          <!-- 和室10畳 -->
           <button
             class="map-hotspot"
             style="left:46%;top:44%"
@@ -957,7 +1010,6 @@ footer {
             aria-label="和室10畳の写真を見る"
           ></button>
 
-          <!-- 左のカメラ：和室4畳 -->
           <button
             class="map-hotspot"
             style="left:69%;top:64%"
@@ -966,7 +1018,6 @@ footer {
             aria-label="和室4畳の写真を見る"
           ></button>
 
-          <!-- 右のカメラ：和室8畳 -->
           <button
             class="map-hotspot"
             style="left:88%;top:44%"
@@ -998,204 +1049,6 @@ footer {
 </section>
 
 <!-- =========================
-     周辺観光
-========================= -->
-
-<section class="wrap" id="around">
-
-  <div class="center">
-
-    <div class="eyebrow">
-      EXPLORE GUJO
-    </div>
-
-    <h2>
-      周辺のアクティビティ・<br>
-      観光スポット
-    </h2>
-
-    <p>
-      雪山、登山、川遊び、ラフティング。<br>
-      四季折々の郡上を楽しんで。
-    </p>
-
-  </div>
-
-  <!-- スキー・スノーボード -->
-
-  <h3 class="around-heading">
-    ❄ スキー・スノーボード
-  </h3>
-
-  <div class="around-grid">
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=鷲ヶ岳スキー場"
-      target="_blank"
-      rel="noopener"
-    >
-      鷲ヶ岳スキー場 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ダイナランド"
-      target="_blank"
-      rel="noopener"
-    >
-      ダイナランド <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=高鷲スノーパーク"
-      target="_blank"
-      rel="noopener"
-    >
-      高鷲スノーパーク <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ホワイトピアたかす"
-      target="_blank"
-      rel="noopener"
-    >
-      ホワイトピアたかす <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの高原スキー場"
-      target="_blank"
-      rel="noopener"
-    >
-      ひるがの高原スキー場 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ウイングヒルズ白鳥リゾート"
-      target="_blank"
-      rel="noopener"
-    >
-      ウイングヒルズ白鳥リゾート <span>↗</span>
-    </a>
-
-  </div>
-
-  <!-- 登山・川遊び -->
-
-  <h3 class="around-heading">
-    🌲 登山・川遊び・アウトドア
-  </h3>
-
-  <div class="around-grid">
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=大日ヶ岳+登山口"
-      target="_blank"
-      rel="noopener"
-    >
-      大日ヶ岳（登山・ハイキング） <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの高原"
-      target="_blank"
-      rel="noopener"
-    >
-      ひるがの高原（散策） <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=長良川+ラフティング+郡上"
-      target="_blank"
-      rel="noopener"
-    >
-      長良川 川下り <span>↗</span>
-    </a>
-
-
-
-  </div>
-
-  <!-- 観光・温泉 -->
-
-  <h3 class="around-heading">
-    🌿 観光・温泉
-  </h3>
-
-  <div class="around-grid">
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=牧歌の里"
-      target="_blank"
-      rel="noopener"
-    >
-      牧歌の里 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの分水嶺公園"
-      target="_blank"
-      rel="noopener"
-    >
-      ひるがの分水嶺公園 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=湯の平温泉+郡上市"
-      target="_blank"
-      rel="noopener"
-    >
-      湯の平温泉 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=郡上八幡"
-      target="_blank"
-      rel="noopener"
-    >
-      郡上八幡の町並み <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=郡上八幡城"
-      target="_blank"
-      rel="noopener"
-    >
-      郡上八幡城 <span>↗</span>
-    </a>
-
-    <a
-      class="around-card"
-      href="https://www.google.com/maps/search/?api=1&amp;query=阿弥陀ヶ滝"
-      target="_blank"
-      rel="noopener"
-    >
-      阿弥陀ヶ滝 <span>↗</span>
-    </a>
-
-  </div>
-
-  <p class="note center" style="margin-top:25px">
-    ※天候・季節により利用状況が異なります。<br>
-    お出かけ前に各施設の営業情報をご確認ください。
-  </p>
-
-</section>
-
-<!-- =========================
      宿泊料金
 ========================= -->
 
@@ -1217,50 +1070,51 @@ footer {
 
     </div>
 
-  
-<div class="rates">
-  <div class="price-table-wrap">
-    <table class="price-table">
-      <thead>
-        <tr>
-          <th>区分</th>
-          <th>平日・日曜</th>
-          <th>土曜・祝前日</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>大人<br>（高校生以上）</td>
-          <td>3,000円</td>
-          <td>3,500円</td>
-        </tr>
-        <tr>
-          <td>小・中学生</td>
-          <td>2,000円</td>
-          <td>2,500円</td>
-        </tr>
-        <tr>
-          <td>未就学児<br>（寝具あり）</td>
-          <td>1,000円</td>
-          <td>1,000円</td>
-        </tr>
-        <tr>
-          <td>未就学児<br>（添い寝）</td>
-          <td>無料</td>
-          <td>無料</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    <div class="rates">
 
+      <div class="price-table-wrap">
+
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>平日・日曜</th>
+              <th>土曜・祝前日</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>大人<br>（高校生以上）</td>
+              <td>3,000円</td>
+              <td>3,500円</td>
+            </tr>
+            <tr>
+              <td>小・中学生</td>
+              <td>2,000円</td>
+              <td>2,500円</td>
+            </tr>
+            <tr>
+              <td>未就学児<br>（寝具あり）</td>
+              <td>1,000円</td>
+              <td>1,000円</td>
+            </tr>
+            <tr>
+              <td>未就学児<br>（添い寝）</td>
+              <td>無料</td>
+              <td>無料</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
 
     </div>
 
     <p class="center note" style="margin-top:22px">
       ※休前日は土曜日・祝日の前日です。<br>
       ※年末年始料金は12月28日〜1月3日に適用します。<br>
-      ※冬季は、1泊300円の暖房費を別途いただきます。
+      ※冬季は、小学生以上1名につき1泊300円の暖房費を別途いただきます。
     </p>
 
     <p class="center note" style="margin-top:25px">
@@ -1450,7 +1304,435 @@ footer {
       Googleマップで場所を見る ↗
     </a>
 
+    <div class="winter-notice">
+
+      <h3>❄️ 冬季にお越しのお客様へ</h3>
+
+      <p>
+        冬季は積雪や路面凍結が発生します。<br>
+        <strong>
+          お車でお越しの際は、必ずスタッドレスタイヤを装着してください。
+        </strong>
+        <br><br>
+        天候や道路状況によってはチェーンが必要になる場合もあります。
+        時間に余裕を持って、安全運転でお越しください。
+      </p>
+
+    </div>
+
   </div>
+
+</section>
+
+<!-- =========================
+     周辺情報
+     アクセスの後・フッターの前
+========================= -->
+
+<section class="wrap" id="around">
+
+  <div class="center">
+
+    <div class="eyebrow">
+      NEARBY INFORMATION
+    </div>
+
+    <h2>まつぼっくりの周辺情報</h2>
+
+    <p class="around-intro">
+      温泉やお買い物、道の駅、四季折々の観光スポット。<br>
+      高鷲・郡上での滞在をお楽しみください。
+    </p>
+
+  </div>
+
+  <!-- =====================
+       1. 温泉
+  ===================== -->
+
+  <h3 class="around-heading">
+    ♨️ 温泉
+  </h3>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=湯の平温泉+郡上市"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">湯の平温泉</span>
+        <span class="around-time">宿から車で約10分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ふたこえ温泉"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ふたこえ温泉</span>
+        <span class="around-time">宿から車で約15分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=天然温泉+満天の湯+郡上"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">天然温泉 満天の湯</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=美人の湯+しろとり+かみほの湯"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">美人の湯 しろとり かみほの湯</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=牧歌の里温泉+牧華"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">牧歌の里温泉 牧華</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- =====================
+       2. コンビニ・スーパー
+  ===================== -->
+
+  <h3 class="around-heading">
+    🛒 コンビニ・スーパー
+  </h3>
+
+  <h4 class="around-subheading">
+    コンビニ
+  </h4>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ファミリーマート+高鷲インター店"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ファミリーマート 高鷲インター店</span>
+        <span class="around-time">宿から車で約10分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ローソン+郡上白鳥店"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ローソン 郡上白鳥店</span>
+        <span class="around-time">宿から車で約15分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=デイリーヤマザキ+高鷲ひるがの高原店"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">デイリーヤマザキ 高鷲ひるがの高原店</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <h4 class="around-subheading">
+    スーパー
+  </h4>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=バロー白鳥店"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">バロー白鳥店</span>
+        <span class="around-time">宿から車で約15分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=Aコープ+おくみの店"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">Aコープ おくみの店</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=フレッシュフーズひるがの"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">フレッシュフーズひるがの</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- =====================
+       3. 道の駅
+  ===================== -->
+
+  <h3 class="around-heading">
+    🚗 道の駅
+  </h3>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=道の駅+清流の里しろとり"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">道の駅 清流の里しろとり</span>
+        <span class="around-time">宿から車で約10分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=道の駅+白尾ふれあいパーク"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">道の駅 白尾ふれあいパーク</span>
+        <span class="around-time">宿から車で約15分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=道の駅+大日岳"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">道の駅 大日岳</span>
+        <span class="around-time">宿から車で約15分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=道の駅+白鳥"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">道の駅 白鳥</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <!-- =====================
+       4. 周辺スポット
+  ===================== -->
+
+  <h3 class="around-heading">
+    🌿 周辺スポット
+  </h3>
+
+  <h4 class="around-subheading">
+    ❄️ スキー・スノーボード
+  </h4>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=鷲ヶ岳スキー場"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">鷲ヶ岳スキー場</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ダイナランド"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ダイナランド</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=高鷲スノーパーク"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">高鷲スノーパーク</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ホワイトピアたかす"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ホワイトピアたかす</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの高原スキー場"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ひるがの高原スキー場</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ウイングヒルズ白鳥リゾート"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ウイングヒルズ白鳥リゾート</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <h4 class="around-subheading">
+    🌼 観光・お出かけ
+  </h4>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=牧歌の里"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">牧歌の里</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの分水嶺公園"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ひるがの分水嶺公園</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=郡上八幡+旧庁舎記念館"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">郡上八幡の町並み</span>
+        <span class="around-time">宿から車で約40分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=郡上八幡城"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">郡上八幡城</span>
+        <span class="around-time">宿から車で約40分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <h4 class="around-subheading">
+    🌲 登山・川遊び・アウトドア
+  </h4>
+
+  <div class="around-grid">
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=大日ヶ岳+ひるがの登山口"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">大日ヶ岳（ひるがの登山口）</span>
+        <span class="around-time">宿から車で約25分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=ひるがの高原"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">ひるがの高原（散策）</span>
+        <span class="around-time">宿から車で約20分</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=長良川+ラフティング+郡上"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">長良川ラフティング</span>
+        <span class="around-time">集合場所により異なります</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=郡上市+川遊び"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">郡上の川遊び</span>
+        <span class="around-time">場所により異なります</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+    <a class="around-card"
+       href="https://www.google.com/maps/search/?api=1&amp;query=阿弥陀ヶ滝+駐車場"
+       target="_blank" rel="noopener">
+      <div>
+        <span class="around-name">阿弥陀ヶ滝</span>
+        <span class="around-time">車での所要時間は要確認</span>
+      </div>
+      <span class="around-arrow">↗</span>
+    </a>
+
+  </div>
+
+  <p class="note center" style="margin-top:30px">
+    ※所要時間は通常時の車での目安です。<br>
+    冬季は積雪・凍結・道路状況により、
+    さらに時間がかかる場合があります。<br>
+    ※施設の営業時間・営業期間・利用状況は季節により異なります。
+    お出かけ前に各施設の最新情報をご確認ください。
+  </p>
 
 </section>
 
@@ -1600,8 +1882,6 @@ let currentGallery = [];
 let currentIndex = 0;
 let previousFocus = null;
 
-/* 写真を表示 */
-
 function renderPhoto() {
 
   if (!currentGallery.length) return;
@@ -1628,8 +1908,6 @@ function renderPhoto() {
 
 }
 
-/* 写真を開く */
-
 function openGallery(name) {
 
   if (
@@ -1650,8 +1928,6 @@ function openGallery(name) {
 
 }
 
-/* 写真を閉じる */
-
 function closeGallery() {
 
   modal.classList.remove("show");
@@ -1668,8 +1944,6 @@ function closeGallery() {
 
 }
 
-/* 前後の写真 */
-
 function changePhoto(direction) {
 
   if (currentGallery.length < 2) return;
@@ -1685,8 +1959,6 @@ function changePhoto(direction) {
 
 }
 
-/* カメラボタン */
-
 document
   .querySelectorAll("[data-gallery]")
   .forEach(button => {
@@ -1697,26 +1969,18 @@ document
 
   });
 
-/* 閉じるボタン */
-
 closeButton.addEventListener(
   "click",
   closeGallery
 );
 
-/* 前の写真 */
-
 prevButton.addEventListener("click", () => {
   changePhoto(-1);
 });
 
-/* 次の写真 */
-
 nextButton.addEventListener("click", () => {
   changePhoto(1);
 });
-
-/* 背景を押したら閉じる */
 
 modal.addEventListener("click", event => {
 
@@ -1725,8 +1989,6 @@ modal.addEventListener("click", event => {
   }
 
 });
-
-/* キーボード操作 */
 
 document.addEventListener("keydown", event => {
 
