@@ -106,7 +106,7 @@ header {
   gap:24px;
 }
 .hero-logo {
-  width:120px;
+  width:160px;
   height:auto;
   object-fit:contain;
   flex-shrink:0;
@@ -288,6 +288,17 @@ header {
   color:#745d4a;
 }
 
+/* ファミリー貸切：囲み枠なし */
+.family-private {
+  max-width:900px;
+  margin:42px auto 0;
+  padding:0 12px;
+}
+.family-private .price-table-wrap {
+  max-width:600px;
+  margin:auto;
+}
+
 /* FAQ */
 .faq {
   max-width:820px;
@@ -383,7 +394,7 @@ footer {
   .hero {min-height:490px}
   .hero-inner {padding:70px 22px}
   .hero-title {gap:12px}
-  .hero-logo {width:65px}
+  .hero-logo {width:88px}
   .hero-title h1 {
     font-size:clamp(1.7rem,7vw,2.4rem);
   }
@@ -472,7 +483,7 @@ footer {
 
   <!-- 星空・団らん・清流の横長画像 -->
   <div class="concept-visual">
-    <img src="view-point.png"
+    <img src="viewpoint.png"
          alt="高鷲の星空、古民家での団らん、緑に囲まれた清流"
          loading="lazy">
   </div>
@@ -540,7 +551,7 @@ footer {
           <img src="floorplan-camera.png"
                alt="宿泊スペースの間取り図">
 
-          <!-- 玄関：間取り図の下側 -->
+          <!-- 玄関 -->
           <button class="map-hotspot"
                   style="left:40%;top:95%"
                   type="button"
@@ -564,20 +575,20 @@ footer {
                   aria-label="和室10帖の写真を見る">
           </button>
 
-          <!-- 和室8帖 -->
+          <!-- 左のカメラ：和室4畳 -->
           <button class="map-hotspot"
                   style="left:69%;top:64%"
                   type="button"
-                  data-gallery="bed8"
-                  aria-label="和室8帖の写真を見る">
+                  data-gallery="bed4"
+                  aria-label="和室4畳の写真を見る">
           </button>
 
-          <!-- 和室4帖 -->
+          <!-- 右のカメラ：和室8畳 -->
           <button class="map-hotspot"
                   style="left:88%;top:44%"
                   type="button"
-                  data-gallery="bed4"
-                  aria-label="和室4帖の写真を見る">
+                  data-gallery="bed8"
+                  aria-label="和室8畳の写真を見る">
           </button>
         </div>
 
@@ -763,7 +774,8 @@ footer {
       1泊300円の暖房費を別途いただきます。
     </p>
 
-    <div class="rates">
+    <!-- ファミリー貸切：ボックスなし -->
+    <div class="family-private">
       <h3 class="center">ファミリー貸切</h3>
 
       <p class="center">
@@ -1028,23 +1040,19 @@ const galleries = {
     }
   ],
 
+  bed4: [
+    {
+      src: "washitsu-4.jpeg",
+      title: "和室4畳・二段ベッド"
+    }
+  ],
 
-<!-- 左のカメラ：和室4畳・二段ベッド -->
-<button class="map-hotspot"
-        style="left:69%;top:64%"
-        type="button"
-        data-gallery="bed4"
-        aria-label="和室4畳・二段ベッドの写真を見る">
-</button>
-
-<!-- 右のカメラ：和室8畳・二段ベッド -->
-<button class="map-hotspot"
-        style="left:88%;top:44%"
-        type="button"
-        data-gallery="bed8"
-        aria-label="和室8畳・二段ベッドの写真を見る">
-</button>
-
+  bed8: [
+    {
+      src: "washitsu-8.jpeg",
+      title: "和室8畳・二段ベッド"
+    }
+  ],
 
   kitchen: [
     {
