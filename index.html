@@ -125,19 +125,16 @@ header{
 .section-alt{background:#f1e2d0}
 
 /* コンセプト */
-.concept-photo-strip{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:6px;
-  margin:38px auto 30px;
-  max-width:1000px;
+.concept-visual{
+  width:100%;
+  max-width:1100px;
+  margin:38px auto 32px;
 }
-.concept-photo-slot{
-  aspect-ratio:4/3;
-  background:#e9dccd;
-  background-size:cover;
-  background-position:center;
-  border-radius:3px;
+.concept-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:4px;
 }
 .concept-message{
   padding:10px 0 22px;
@@ -148,14 +145,18 @@ header{
   letter-spacing:.07em;
 }
 .concept-message p{margin:0}
-.concept-box{
+.concept-sharing{
   max-width:790px;
-  margin:35px auto 0;
-  padding:28px 32px;
-  border-left:3px solid #b89b7d;
-  background:#fff9f0;
-  text-align:left;
-  border-radius:0 12px 12px 0;
+  margin:30px auto 0;
+  text-align:center;
+}
+.concept-sharing h3{
+  color:var(--brown);
+  font-size:clamp(1.1rem,2.2vw,1.4rem);
+  margin-bottom:18px;
+}
+.concept-sharing p{
+  margin-bottom:22px;
 }
 
 /* 間取り */
@@ -366,12 +367,12 @@ footer{
   .hero{min-height:490px}
   .hero-inner{padding:70px 22px}
   .wrap{padding:55px 18px}
-  .concept-photo-strip{
-    gap:3px;
-    margin:28px -8px 22px;
+  .concept-visual{
+    margin:28px -18px 24px;
+    width:calc(100% + 36px);
   }
-  .concept-photo-slot{aspect-ratio:3/4}
-  .concept-box{padding:20px}
+  .concept-visual img{border-radius:0}
+  .concept-sharing{margin-top:22px}
   .floor-box{padding:8px}
   .around-grid{grid-template-columns:1fr}
   .rates{padding:12px}
@@ -442,37 +443,11 @@ footer{
     そんな気持ちで始めました。
   </p>
 
-  <!--
-    ここに写真3枚を横並びで入れます。
-    左：星空
-    中央：団らん
-    右：夏の清流
-
-    現在は空の写真枠です。
-
-    後から写真を入れる場合は、
-    各divに以下のように追加します。
-
-    style="background-image:url('写真ファイル名')"
-  -->
-
-  <div class="concept-photo-strip">
-
-    <!-- 星空 -->
-    <div class="concept-photo-slot"
-         aria-label="星空の写真スペース">
-    </div>
-
-    <!-- 団らん -->
-    <div class="concept-photo-slot"
-         aria-label="団らんの写真スペース">
-    </div>
-
-    <!-- 夏の清流 -->
-    <div class="concept-photo-slot"
-         aria-label="夏の清流の写真スペース">
-    </div>
-
+  <!-- 星空・団らん・清流をまとめた横長画像 -->
+  <div class="concept-visual">
+    <img src="viewpoint.png"
+         alt="まつぼっくりの星空、古民家での団らん、緑に囲まれた清流"
+         loading="lazy">
   </div>
 
   <div class="concept-message">
@@ -484,7 +459,8 @@ footer{
     </p>
   </div>
 
-  <div class="concept-box">
+  <!-- 囲み枠なしの宿泊スタイル説明 -->
+  <div class="concept-sharing">
     <h3>ひとつの家を、みんなでシェア。</h3>
 
     <p>
@@ -500,7 +476,7 @@ footer{
       お互い気を遣いすぎず、譲り合いながら過ごせたらうれしいです。
     </p>
 
-    <p style="margin-bottom:0">
+    <p>
       毎日営業する宿ではなく、宿主が滞在できる日を中心にお迎えしています。<br>
       それでも、この場所を楽しんでもらえたら。<br>
       そんな気持ちでお待ちしています。
@@ -538,10 +514,17 @@ footer{
 
       <div class="floor-box">
         <div class="floor-map">
-
+          
           <img src="floorplan-camera.png"
                alt="宿泊スペースの間取り図">
 
+          <button class="map-hotspot"
+        style="left:20%;top:30%"
+        type="button"
+        data-gallery="entrance"
+        aria-label="玄関の写真を見る">
+</button>
+          
           <button class="map-hotspot"
                   style="left:37%;top:33%"
                   type="button"
@@ -845,14 +828,6 @@ footer{
 
   <div class="faq">
 
-    <details>
-      <summary>宿主も同じ家に泊まりますか？</summary>
-      <p>
-        はい。宿主も同じ建物に滞在するスタイルです。<br>
-        キッチン・浴室・トイレなどは共用となります。<br>
-        一般的なホテルとは異なることをご了承ください。
-      </p>
-    </details>
 
     <details>
       <summary>毎日営業していますか？</summary>
@@ -918,16 +893,6 @@ footer{
     </details>
 
     <details>
-      <summary>テレビやインターネットはありますか？</summary>
-      <p>
-        テレビはありません。<br>
-        携帯電話の電波が弱い場所もあります。<br>
-        通信環境を重視される方は、
-        事前にご相談ください。
-      </p>
-    </details>
-
-    <details>
       <summary>冬は寒いですか？</summary>
       <p>
         はい。築年数の経った古民家のため、
@@ -936,15 +901,6 @@ footer{
         暖かい服装や防寒着をお持ちください。<br>
         冬季は小学生以上1名につき
         1泊300円の暖房費を別途いただきます。
-      </p>
-    </details>
-
-    <details>
-      <summary>お風呂は使えますか？</summary>
-      <p>
-        はい。共用のお風呂をご利用いただけます。<br>
-        利用が重ならないよう、
-        館内の入浴予約表にご希望の時間をご記入ください。
       </p>
     </details>
 
@@ -963,14 +919,6 @@ footer{
       <p>
         はい。共用キッチンをご利用いただけます。<br>
         宿主やほかのお客様と譲り合ってご利用ください。
-      </p>
-    </details>
-
-    <details>
-      <summary>予約はフォーム送信で確定しますか？</summary>
-      <p>
-        いいえ。まず空き状況をお問い合わせいただき、
-        宿からのご案内を経て予約確定となります。
       </p>
     </details>
 
@@ -1091,13 +1039,13 @@ const galleries = {
   ],
   bed8: [
     {
-      src:"washitsu-8.jpeg",
+      src:"washitsu-4.jpeg",
       title:"和室8帖・二段ベッド"
     }
   ],
   bed4: [
     {
-      src:"washitsu-4.jpeg",
+      src:"washitsu-8.jpeg",
       title:"和室4帖・二段ベッド"
     }
   ],
@@ -1110,6 +1058,12 @@ const galleries = {
       src:"dining.jpeg",
       title:"ダイニング"
     }
+    entrance: [
+  {
+    src: "entrance.png",
+    title: "玄関・土間"
+  }
+],
   ]
 };
 
